@@ -1,0 +1,11 @@
+# Variáveis de ambiente — nunca subir pro GitHub
+.env
+.env.local
+.env.*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Scripts utilitários (não necessários no deploy)
+prepara.py

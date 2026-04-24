@@ -1,0 +1,131 @@
+# Skill: Wasender — Página de Vendas
+
+## Contexto do Projeto
+Página de vendas HTML pura para o software **Wasender 5.0.8** — ferramenta de automação para WhatsApp.
+- Dono: michproducoes
+- Tecnologia: HTML + CSS + JS puro (sem WordPress, sem frameworks)
+- Hospedagem alvo: Netlify (via GitHub)
+
+## Arquivos do Projeto
+```
+venda/
+├── index.html        ← página principal
+├── logowasender.png  ← logo do produto
+└── versao-5.0.1.png  ← imagem do produto (hero + product box)
+```
+
+## Vídeos do YouTube (carousel de tutoriais)
+| Posição | Aula | ID YouTube |
+|---|---|---|
+| 1 | Aula 01 — Apresentação | LSJkQe-tqUQ |
+| 2 | Aula 02 — Review Completo | CwQUldhRxbo |
+| 3 | Aula 03 — Multi Contas | nnd8Ip6wv0E |
+| 4 | Aula 06 — Grupos e Contatos | fvMcLNMyflk |
+| 5 | Aula 08 — Extrator Google Maps | aHbsRkIKb6s |
+| 6 | Aula 09 — ChatBot | rIcHJurS9cQ |
+
+Vídeo principal (hero): `6lgg5wRqzms`
+
+## Planos e Preços
+| Plano | Licenças | Preço | Período |
+|---|---|---|---|
+| Individual | 1 | R$ 69,90 | 12 meses |
+| Duplo | 2 | R$ 149,90 | 12 meses |
+
+**Links de compra (Hotmart):** a definir — quando o usuário fornecer, substituir nos dois botões `.pcard .btn` dentro de `#planos`.
+
+## Design e Estilo
+- Fundo escuro: `#050d0a`, `#0a1a12`, `#0f2318`
+- Verde principal: `#25D366` (WhatsApp)
+- Verde neon: `#00ff88`
+- Fonte: Inter (Google Fonts)
+- Animações: scroll reveal (fade up, slide left/right), float na imagem, glow nos números, pulse nos botões CTA
+
+## Seções da Página (em ordem)
+1. Header fixo com logo + nav + botão CTA
+2. Hero — headline + imagem flutuante + stats
+3. Vídeo principal com thumbnail clicável (modal)
+4. Recursos — grid 3×4 (12 cards) com hover neon
+5. Stats — 4 números grandes com glow
+6. Product Box — imagem + lista de 12 benefícios + preço riscado
+7. Como Funciona — 3 passos
+8. Tutoriais — carousel 3 slides com setas
+9. Depoimentos — 3 cards
+10. Planos — 2 cards (Individual e Duplo)
+11. FAQ — accordion
+12. CTA Final
+13. Footer
+
+## Recursos do Produto (12 cards)
+1. Multi Contas
+2. ChatBot Inteligente
+3. Disparos em Massa
+4. Extrator Google Maps
+5. Proxy Integrado
+6. Envio de Áudio OGG
+7. Gerador de Grupos
+8. Aquecedor de Números
+9. KeyMakers e Rotação
+10. Gestão de Contatos
+11. Campanhas Agendadas
+12. Envio para Grupos
+
+**NÃO incluir:** White Label / revenda
+
+## Deploy — GitHub + Netlify
+
+### Passo 1: Subir para o GitHub
+```bash
+# Dentro da pasta venda/
+git init
+git add .
+git commit -m "feat: página de vendas Wasender 5.0.8"
+git branch -M main
+git remote add origin https://github.com/SEU_USUARIO/wasender-vendas.git
+git push -u origin main
+```
+
+### Passo 2: Conectar Netlify ao GitHub
+1. Acessa netlify.com → "Add new site" → "Import an existing project"
+2. Conecta com GitHub e seleciona o repositório `wasender-vendas`
+3. Build command: deixar vazio
+4. Publish directory: `.` (raiz)
+5. Clica "Deploy site"
+
+### Passo 3: Atualizações futuras
+Qualquer alteração no HTML basta fazer:
+```bash
+git add .
+git commit -m "fix: descrição da alteração"
+git push
+```
+O Netlify detecta automaticamente e republica em segundos.
+
+## Manutenção Comum
+
+### Trocar link de compra (Hotmart)
+Buscar no index.html por `href="#"` dentro da seção `#planos` e substituir pela URL da Hotmart.
+
+### Adicionar novo vídeo tutorial
+Adicionar novo `.cslide` no carousel com o ID do YouTube:
+```html
+<div class="cslide">
+  <div class="tcard" data-video="ID_YOUTUBE">
+    <img src="https://img.youtube.com/vi/ID_YOUTUBE/hqdefault.jpg" alt="Título">
+    <div class="tplay"><div class="tplay-btn">▶</div></div>
+    <div class="tlabel">Aula XX — Título</div>
+  </div>
+</div>
+```
+
+### Alterar preços
+Buscar `.pprice` e `.pper` nos dois `.pcard` dentro de `#planos`.
+
+### Adicionar depoimento
+Copiar um bloco `.tcard2` dentro de `.tgrid` e alterar texto, inicial do avatar e nome.
+
+## Observações Técnicas
+- Vídeos abrem em modal (iframe lazy) — só funcionam via http:// ou https://, não via file://
+- Para testar localmente: `python3 -m http.server 8080` e acessar `http://localhost:8080`
+- Todas as imagens de thumbnail dos vídeos são carregadas do YouTube (externas)
+- As duas imagens locais (`logowasender.png` e `versao-5.0.1.png`) devem estar na mesma pasta que o `index.html`
