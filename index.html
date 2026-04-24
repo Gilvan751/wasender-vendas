@@ -344,7 +344,7 @@ footer a:hover{color:var(--neon)}
       <div class="bprice">
         <span class="old">R$ 497</span>
       </div>
-      <a href="#planos" class="btn btn-g"><span>🚀 Quero Organizar Meu Atendimento</span></a>
+      <a href="https://go.hotmart.com/C105536243Q" class="btn btn-g"><span>🚀 Quero Organizar Meu Atendimento</span></a>
     </div>
   </div>
 </section>
@@ -408,27 +408,10 @@ footer a:hover{color:var(--neon)}
     <div class="slabel reveal">Planos</div>
     <h2 class="stitle reveal">Escolha seu Plano</h2>
     <p class="ssub reveal">Acesso completo por 12 meses com todas as atualizações inclusas</p>
-    <div class="pgrid">
-      <div class="pcard reveal">
-        <h3>Individual</h3>
-        <div class="pdesc">1 Licença — 12 meses</div>
-        <div class="pprice"><sup>R$</sup>69<span class="cents">,90</span></div>
-        <div class="pper">por ano • R$ 5,82/mês</div>
-        <ul class="plist">
-          <li>1 Conta WhatsApp</li>
-          <li>Campanhas de Relacionamento</li>
-          <li>Assistente Virtual Completo</li>
-          <li>Captação via Google Maps</li>
-          <li>Proxy Integrado</li>
-          <li>Maturação de Contas</li>
-          <li>Suporte via WhatsApp</li>
-          <li>Atualizações por 12 meses</li>
-        </ul>
-        <a href="#" class="btn btn-g"><span>Comprar Agora</span></a>
-      </div>
+    <div class="pgrid" style="max-width:460px">
       <div class="pcard hot reveal">
-        <div class="pbadge">🔥 Melhor Custo-Benefício</div>
-        <h3>Duplo</h3>
+        <div class="pbadge">🔥 Oferta Especial</div>
+        <h3>Plano Profissional</h3>
         <div class="pdesc">2 Licenças — 12 meses</div>
         <div class="pprice"><sup>R$</sup>149<span class="cents">,90</span></div>
         <div class="pper">por ano • R$ 12,49/mês</div>
@@ -441,10 +424,11 @@ footer a:hover{color:var(--neon)}
           <li>Maturação de Contas</li>
           <li>Variação de Mensagens</li>
           <li>Gestão de Grupos</li>
+          <li>Mensagens de Voz OGG</li>
           <li>Suporte Prioritário</li>
           <li>Atualizações por 12 meses</li>
         </ul>
-        <a href="#" class="btn btn-g"><span>🚀 Quero 2 Licenças</span></a>
+        <a onclick="return false;" href="https://pay.hotmart.com/C105536243Q?checkoutMode=2" class="hotmart-fb hotmart__button-checkout btn btn-g" style="display:block;text-align:center;padding:15px"><span>🚀 Quero Agora com Desconto</span></a>
       </div>
     </div>
   </div>
@@ -471,7 +455,7 @@ footer a:hover{color:var(--neon)}
 <section class="sec-cta">
   <h2 class="reveal">Pronto para <em>Aumentar suas Vendas</em> no WhatsApp?</h2>
   <p class="reveal">Junte-se a mais de 10.000 empreendedores que já profissionalizaram seu atendimento com o Wasender</p>
-  <a href="#planos" class="btn btn-g reveal"><span>🚀 Quero Melhorar Meu Atendimento</span></a>
+  <a href="https://pay.hotmart.com/C105536243Q" class="btn btn-g reveal"><span>🚀 Quero Melhorar Meu Atendimento</span></a>
 </section>
 
 <!-- FOOTER -->
@@ -489,6 +473,20 @@ footer a:hover{color:var(--neon)}
     <iframe id="mif" src="" allowfullscreen allow="autoplay"></iframe>
   </div>
 </div>
+
+<script type="text/javascript">
+function importHotmart(){
+  var imported = document.createElement('script');
+  imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+  document.head.appendChild(imported);
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+  document.head.appendChild(link);
+}
+importHotmart();
+</script>
 
 <script>
 const obs = new IntersectionObserver(entries=>{
