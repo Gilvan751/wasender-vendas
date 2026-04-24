@@ -9,3 +9,7 @@ Thumbs.db
 
 # Scripts utilitários (não necessários no deploy)
 prepara.py
+
+# Documentação interna — não vai pro deploy
+*.txt
+skill-wasender.md
